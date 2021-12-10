@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-      <div id="nav">
-            <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link>
-        </div>
+    <div id="nav">
+     <navBar :myUsername="authenticated"></navBar>
+    </div>
+    
+    <router-view @authenticated="setAuthenticated" />
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import navBar from "./views/navBar.vue";
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {navBar},
+  data() {
+      return {
+          authenticated: false,
+      }
+  },
+  mounted() {
+      if(!this.authenticated) {
+        var that =this;
+          that.$router.replace({ name: "login" });
+      }
+  },
+  methods: {
+      setAuthenticated(status) {
+          this.authenticated = status;
+      },
+    
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
