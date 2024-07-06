@@ -4,6 +4,10 @@ import App from './App.vue'
 import VueResource from 'vue-resource'
 import JQuery from 'jquery'
 
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS (includes Popper.js)
+import 'bootstrap/js/dist/popover'; // Import popover.js
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -17,9 +21,9 @@ Vue.component('font-awesome-layers-text', FontAwesomeLayersText);
 
 window.$ = window.jQuery = JQuery;
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min.js';
-import 'bootstrap/js/dist/popover.js';
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/js/bootstrap.min.js';
+// import 'bootstrap/js/dist/popover';
 
 
 
