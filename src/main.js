@@ -21,13 +21,6 @@ Vue.component('font-awesome-layers-text', FontAwesomeLayersText);
 
 window.$ = window.jQuery = JQuery;
 
-// import 'bootstrap/dist/css/bootstrap.min.css'
-// import 'bootstrap/dist/js/bootstrap.min.js';
-// import 'bootstrap/js/dist/popover';
-
-
-
-
 
 Vue.config.productionTip = false
 Vue.use(VueResource);

@@ -82,6 +82,7 @@
     height: 95px;
     border-radius: 50%;
     z-index: 9;
+    background:#28a745!important;
     padding: 8px;
     box-shadow: 0px 2px 2px rgb(0 0 0 / 10%);
 } 
