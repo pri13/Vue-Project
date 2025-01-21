@@ -27,6 +27,8 @@ export default {
       }
   },
   methods: {
+     // This method is called when the user is authenticated
+     // It is called from the login component
       setAuthenticated(status) {
           this.authenticated = status;
       },

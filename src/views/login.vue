@@ -1,6 +1,12 @@
 <template>
+    <!-- we are using Boostrap 4 library for below-->
+    <!--creating a container which centers the div block content -->
     <div class="container my-3" id="login">
+        <!--creating a row which centers the div block content 
+        This is Flex CSS Model-->
         <div class="row justify-content-center">
+            <!--creating column that will take half width of the container
+            on large screen, full width on medium and small screens.-->
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="card shadow-lg my-5 rounded border border-light" style="border:3px;">
                     <div>
@@ -14,7 +20,7 @@
                             </div>
                         </div>
                          <div class="row" v-show="input.isError">
-                            <div class="col-12 text-center">
+                            <div class="col-12 text-center"> 
                                 <div class="alert alert-danger">
                                     <div class="row">
                                         <div class="col-lg-1 col-sm-12">
@@ -72,6 +78,8 @@
     export default {
         name: 'Login',
         data() {
+            // This is the data that will be used in the component
+            // for Double binding
             return {
                 input: {
                     username: "",
@@ -89,13 +97,18 @@
                     var serviceBase = 'http://localhost:49864/';
                     var data = "grant_type=password&username=" + this.input.username + "&password=" + this.input.password;
 
+                    // This is the call to the API that will return the token
+                 
+                    // The token is then used to authenticate the user
+                    // The user is then redirected to the secure page
                     this.$http.post(serviceBase + 'token', data,
                                      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(result => {
-
+                      // The token is then stored in local storage
                         localStorage.setItem('authorizationData', 
                         JSON.stringify({token: result.data.access_token, userName:this.input.username }))
-                        
+                        //Send back to the parent component that the user is authenticated
                         this.$emit("authenticated", true);
+                        // Redirect to the secure page
                         this.$router.replace({ name: "secure" });
 
                     } , error => {
