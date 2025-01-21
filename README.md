@@ -4,7 +4,7 @@
 ```
 npm install
 ```
-![PIC_006](https://github.com/user-attachments/assets/90d10ef0-7c19-455a-b259-2ea29c066b5f)
+
 
 ### Compiles and hot-reloads for development
 ```
